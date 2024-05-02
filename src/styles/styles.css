@@ -1,0 +1,90 @@
+.custom-table-header .ant-table-thead>tr>th {
+    background-color: #333;
+    /* Dark grey background color */
+    color: #fff;
+    /* Text color */
+}
+
+.pink-icon {
+    color: #ff69b4;
+    /* Pink color */
+}
+
+/* styles.css */
+
+/* Example styling for form container */
+.FormContainer {
+    font-family: Arial, sans-serif;
+}
+
+/* Example styling for form fields */
+.FormContainer .field {
+    margin-bottom: 20px;
+}
+
+/* Example styling for form labels */
+.FormContainer .field label {
+    display: block;
+    /* Display labels as block elements */
+    margin-bottom: 5px;
+    /* Add space between label and field */
+}
+
+/* Example styling for form input fields */
+.FormContainer .field input[type="text"],
+.FormContainer .field input[type="number"],
+.FormContainer .field input[type="email"],
+.FormContainer .field textarea {
+    width: calc(100% - 12px);
+    /* Adjust input width to account for label margin */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+
+.field-radio-group label {
+    display: inline-block !important;
+    margin-right: 10px;
+    /* Adjust margin as needed */
+}
+
+/* Example styling for form buttons */
+.FormContainer button[type="submit"],
+.FormContainer button[type="button"] {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.FormContainer button[type="cancel"] {
+    padding: 10px 20px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Example styling for form error messages */
+.FormContainer .errors {
+    color: red;
+}
+
+select {
+    width: 97%;
+    /* Set width to 100% to fill the container */
+    padding: 8px;
+    /* Add padding for spacing */
+    margin-bottom: 10px;
+    /* Add margin bottom for spacing between select controls */
+    border: 1px solid #ccc;
+    /* Add border for visual separation */
+    border-radius: 4px;
+    /* Add border radius for rounded corners */
+    box-sizing: border-box;
+    /* Include padding and border in the element's total width and height */
+}

@@ -1,0 +1,73 @@
+.form-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.form-container h2 {
+    margin-bottom: 20px;
+}
+
+.form-container label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.form-container input[type="text"],
+.form-container input[type="number"],
+.form-container select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.form-container select {
+    height: 38px;
+    /* Match input height */
+}
+
+.form-container .Gender-options div {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+
+.form-container button {
+    padding: 10px 20px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.form-container button[type="submit"] {
+    background-color: #28a745;
+    /* Green color for submit button */
+}
+
+.form-container button[type="button"] {
+    background-color: #dc3545;
+    /* Red color for cancel button */
+    margin-left: 10px;
+}
+
+.form-container button:hover {
+    opacity: 0.8;
+}
+
+.colour-options {
+    display: flex;
+}
+
+.colour-option {
+    margin-right: 10px;
+    /* Adjust as needed */
+}
