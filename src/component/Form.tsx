@@ -40,7 +40,7 @@ const Form: React.FC<IFormProps> = ({ employee }) => {
 
     useEffect(() => {
 
-
+        //preprop formdata if data contains a id
         const employeeData = employee?.props?.employee || {};
         if (employee) {
 
@@ -51,7 +51,7 @@ const Form: React.FC<IFormProps> = ({ employee }) => {
     }, [employee]);
 
     useEffect(() => {
-        // Update Gender to "Male" when Salutation is "Mr"
+        // Update Gender to "Male" when Salutation is "Mr", etc
         if (formData.Salutation === 'Mr') {
             setFormData(prevData => ({
                 ...prevData,
@@ -75,10 +75,25 @@ const Form: React.FC<IFormProps> = ({ employee }) => {
     const handleChange = (e: { target: { name: any; value: any; }; }) => {
         const { name, value } = e.target;
 
+        // Regular expression to match only text (letters and spaces)
+        const textRegex = /^[a-zA-Z\s]*$/;
+
+        // Regular expression to remove non-numeric characters
+        const numericValue = value.replace(/\D/g, '');
+
+        // Regular expression to add digit grouping
+        const formattedValue = numericValue.replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 
 
-
-        if (name === 'Salutation') {
+        // Validate if the input is text only
+        if (name === 'FirstName' || name === 'LastName') {
+            if (textRegex.test(value)) {
+                setFormData({
+                    ...formData,
+                    [name]: value
+                });
+            }
+        } else if (name === 'Salutation') {
             let GenderValue = '';
             if (value === 'Mr') {
                 GenderValue = 'Male';
@@ -92,7 +107,14 @@ const Form: React.FC<IFormProps> = ({ employee }) => {
                 Gender: GenderValue,
                 [name]: value
             }));
-        } else {
+        }
+        else if (name === 'Salary') {
+            setFormData({
+                ...formData,
+                [name]: formattedValue
+            });
+        }
+        else {
             setFormData({
                 ...formData,
                 [name]: value
@@ -154,7 +176,7 @@ const Form: React.FC<IFormProps> = ({ employee }) => {
 
     return (
 
-
+        //form container and fields
         <div className="form-container">
 
             <form onSubmit={handleSubmit}>
@@ -235,7 +257,7 @@ const Form: React.FC<IFormProps> = ({ employee }) => {
                 <label>
                     Gross Salary $PY
                     <input
-                        type="number"
+                        type="text"
                         name="Salary"
                         value={formData.Salary}
                         onChange={handleChange}
@@ -289,6 +311,7 @@ const Form: React.FC<IFormProps> = ({ employee }) => {
                 </div>
 
                 <div>
+
                     <button type="submit" style={{ backgroundColor: formData.EPColour ? formData.EPColour.toLowerCase() : 'Default' }}>Save</button>
                     <button type="button" onClick={handleCancel} >Cancel</button>
                 </div>

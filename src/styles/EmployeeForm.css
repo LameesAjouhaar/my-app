@@ -54,7 +54,7 @@
 }
 
 .form-container button[type="button"] {
-    background-color: #dc3545;
+    background-color: #333;
     /* Red color for cancel button */
     margin-left: 10px;
 }
